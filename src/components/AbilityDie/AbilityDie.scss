@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Genesys';
+  src: url('/src/fonts/genesysglyphsanddice.woff2') format('woff2'),
+        url('/src/fonts/genesysglyphsanddice.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.AbilityDie {
+  position: relative;
+  font-size: 200px;
+  height: 1em;
+  width: 1em;
+  background: no-repeat center/contain;
+  background-image: url("/src/images/ability.svg");
+  user-select: none;
+  cursor: pointer;
+
+  .icon {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Genesys';
+
+    &:first-child {
+      font-size: 30%;
+      top: 30%
+    }
+
+    &:last-child {
+      font-size: 30%;
+      top: 60%
+    }
+
+    &:only-child {
+      font-size: 50%;
+      top: 50%;
+    }
+  }
+}
