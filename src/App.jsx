@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import pluralize from "pluralize";
 
-import GenesysDie from "./GenesysDie";
+import DiceRoller from "./DiceRoller";
 import {
   SUCCESS,
   ADVANTAGE,
@@ -16,6 +16,8 @@ import {
   CHALLENGE,
   SETBACK
 } from "./constants";
+
+export const DiceContext = createContext();
 
 const App = () => {
   const [dicePool, setDicePool] = useState([
@@ -102,36 +104,14 @@ const App = () => {
 
     setPoolResult(results);
   }, [dicePool])
-  
-  const removeDieByIndex = (index) => {
-    return () => setDicePool((prevState) => {
-      const newState = [...prevState];
-      newState.splice(index, 1);
-      return newState;
-    });
-  };
-
-  const setResultByIndex = (index) => {
-    return (result) => setDicePool((prevState) => {
-      const newState = [...prevState];
-      newState[index].result = result;
-      return newState;
-    });
-  };
 
   return (
     <div style={{margin: "20px"}}>
-      <div style={{display: "flex", margin: "20px"}}>
-        {dicePool.map(({ type, value }, index) => (
-          <GenesysDie
-            key={index}
-            type={type}
-            value={value}
-            onClick={removeDieByIndex(index)}
-            setResult={setResultByIndex(index)}
-          />
-        ))}
-      </div>
+      <DiceContext.Provider
+        value={{ dicePool, setDicePool }}
+      >
+        <DiceRoller />
+      </DiceContext.Provider>
       <div style={{display: "flex", margin: "20px"}}>
         {poolResult?.join(", ")}
       </div>
@@ -140,3 +120,7 @@ const App = () => {
 };
 
 export default App;
+
+export const useDiceContext = () => {
+  return useContext(DiceContext);
+};
