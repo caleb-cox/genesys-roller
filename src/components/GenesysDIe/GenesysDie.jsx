@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import "./AbilityDie.scss";
+import classNames from "classnames";
 
-const AbilityDie = () => {
+import "./GenesysDie.scss";
+import { diceMap } from "/src/constants/dice";
+
+const GenesysDie = ({ type }) => {
   const [results, setResults] = useState([]);
-
-  const resultMap = {
-    1: [],
-    2: ["s"],
-    3: ["s"],
-    4: ["s", "s"],
-    5: ["a"],
-    6: ["a"],
-    7: ["a", "s"],
-    8: ["a", "a"]
-  };
+  const resultMap = diceMap[type];
 
   const roll = () => {
     const sides = Object.keys(resultMap).length;
@@ -22,7 +15,7 @@ const AbilityDie = () => {
   };
 
   return (
-    <div className="AbilityDie" onClick={roll}>
+    <div className={classNames("GenesysDie", type)} onClick={roll}>
       {results.map((result, index) => (
         <div className="icon" key={index}>{result}</div>
       ))}
@@ -30,4 +23,4 @@ const AbilityDie = () => {
   );
 };
 
-export default AbilityDie;
+export default GenesysDie;

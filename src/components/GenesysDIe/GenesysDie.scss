@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Genesys';
+  src: url('/src/fonts/genesysglyphsanddice.woff2') format('woff2'),
+        url('/src/fonts/genesysglyphsanddice.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.GenesysDie {
+  position: relative;
+  font-size: 200px;
+  height: 1em;
+  width: 1em;
+  background: no-repeat center/contain;
+  user-select: none;
+  cursor: pointer;
+
+  &.ability {
+    background-image: url("/src/images/ability.svg");
+  }
+
+  &.proficiency {
+    background-image: url("/src/images/proficiency.svg");
+  }
+
+  &.boost {
+    background-image: url("/src/images/boost.svg");
+  }
+
+  &.difficulty {
+    background-image: url("/src/images/difficulty.svg");
+  }
+
+  &.challenge {
+    background-image: url("/src/images/challenge.svg");
+  }
+
+  &.setback {
+    background-image: url("/src/images/setback.svg");
+  }
+
+  .icon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-family: 'Genesys';
+    color: #000;
+
+    &:first-child {
+      font-size: 30%;
+    }
+
+    &:last-child {
+      font-size: 30%;
+    }
+
+    &:only-child {
+      font-size: 50%;
+    }
+  }
+
+  &.difficulty,
+  &.challenge,
+  &.setback {
+    .icon {
+      color: #fff;
+    }
+  }
+
+  &.ability,
+  &.difficulty {
+    .icon {
+      left: 50%;
+  
+      &:first-child {
+        top: 30%;
+      }
+  
+      &:last-child {
+        top: 60%;
+      }
+  
+      &:only-child {
+        top: 50%;
+      }
+    }
+  }
+
+  &.proficiency,
+  &.challenge {
+    .icon {
+      left: 50%;
+  
+      &:first-child {
+        top: 35%;
+      }
+  
+      &:last-child {
+        top: 65%;
+      }
+  
+      &:only-child {
+        top: 50%;
+      }
+    }
+  }
+
+  &.boost,
+  &.setback {
+    .icon {
+      &:first-child {
+        left: 37.5%;
+        top: 37.5%;
+        font-size: 40%;
+      }
+  
+      &:last-child {
+        left: 62.5%;
+        top: 62.5%;
+        font-size: 40%;
+      }
+  
+      &:only-child {
+        left: 50%;
+        top: 50%;
+        font-size: 60%;
+      }
+    }
+  }
+}
