@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Genesys';
-  src: url('/src/fonts/genesysglyphsanddice.woff2') format('woff2'),
-        url('/src/fonts/genesysglyphsanddice.woff') format('woff');
+  font-family: "Genesys";
+  src: url("/src/fonts/genesysglyphsanddice.woff2") format("woff2"),
+        url("/src/fonts/genesysglyphsanddice.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -42,7 +42,7 @@
   .symbol {
     position: absolute;
     transform: translate(-50%, -50%);
-    font-family: 'Genesys';
+    font-family: "Genesys";
     -webkit-font-smoothing: antialiased;
     line-height: 1;
   }
