@@ -56,58 +56,51 @@ const App = () => {
     const symbols = dicePool
       .map(({ result }) => result)
       .flat()
-      .reduce((acc, cur) => {
-        acc[cur] += 1;
-        return acc;
-      }, {
-        [SUCCESS]: 0,
-        [ADVANTAGE]: 0,
-        [TRIUMPH]: 0,
-        [FAILURE]: 0,
-        [THREAT]: 0,
-        [DESPAIR]: 0
-      });
+      .reduce(
+        (acc, cur) => ({...acc, [cur]: acc[cur] + 1}),
+        {
+          [SUCCESS]: 0,
+          [ADVANTAGE]: 0,
+          [TRIUMPH]: 0,
+          [FAILURE]: 0,
+          [THREAT]: 0,
+          [DESPAIR]: 0
+        }
+      );
 
-    const results = [];
-
-    const successSum = symbols[SUCCESS] +
+    const successSum =
+      symbols[SUCCESS] +
       symbols[TRIUMPH] -
       symbols[FAILURE] +
       symbols[DESPAIR];
+
+    const advantageSum =
+      symbols[ADVANTAGE] -
+      symbols[THREAT]
+
+    const results = [];
+
     if (successSum >= 0) {
-      results.push(
-        pluralize("Success", successSum, true)
-      );
+      results.push(pluralize("Success", successSum, true));
     } else {
-      results.push(
-        pluralize("Failure", -successSum, true)
-      );
+      results.push(pluralize("Failure", -successSum, true));
     }
 
-    const advantageSum = symbols[ADVANTAGE] - symbols[THREAT]
     if (advantageSum > 0) {
-      results.push(
-        pluralize("Advantage", advantageSum, true)
-      )
+      results.push(pluralize("Advantage", advantageSum, true));
     } else if (advantageSum < 0) {
-      results.push(
-        pluralize("Threat", -advantageSum, true)
-      )
+      results.push(pluralize("Threat", -advantageSum, true));
     }
 
     if (symbols[TRIUMPH] > 0) {
-      results.push(
-        pluralize("Triumph", symbols[TRIUMPH], true)
-      )
+      results.push(pluralize("Triumph", symbols[TRIUMPH], true));
     }
 
     if (symbols[DESPAIR] > 0) {
-      results.push(
-        pluralize("Despair", symbols[DESPAIR], true)
-      )
+      results.push(pluralize("Despair", symbols[DESPAIR], true));
     }
 
-    setPoolResult(results.join(", "));
+    setPoolResult(results);
   }, [dicePool])
   
   const removeDieByIndex = (index) => {
@@ -140,7 +133,7 @@ const App = () => {
         ))}
       </div>
       <div style={{display: "flex", margin: "20px"}}>
-        {poolResult}
+        {poolResult?.join(", ")}
       </div>
     </div>
   );
