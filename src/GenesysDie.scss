@@ -8,7 +8,7 @@
 
 .GenesysDie {
   position: relative;
-  font-size: 100px;
+  font-size: 75px;
   height: 1em;
   width: 1em;
   background: no-repeat center/contain;
@@ -41,22 +41,16 @@
 
   .symbol {
     position: absolute;
-    left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Genesys';
     -webkit-font-smoothing: antialiased;
-    color: #000;
+  }
 
-    &:first-child {
-      font-size: 30%;
-    }
-
-    &:last-child {
-      font-size: 30%;
-    }
-
-    &:only-child {
-      font-size: 50%;
+  &.ability,
+  &.proficiency,
+  &.boost {
+    .symbol {
+      color: #000;
     }
   }
 
@@ -73,14 +67,20 @@
     .symbol {  
       &:first-child {
         top: 32.5%;
+        left: 50%;
+        font-size: 30%;
       }
   
       &:last-child {
         top: 60%;
+        left: 50%;
+        font-size: 30%;
       }
   
       &:only-child {
         top: 50%;
+        left: 50%;
+        font-size: 50%;
       }
     }
   }
@@ -90,14 +90,20 @@
     .symbol {  
       &:first-child {
         top: 35%;
+        left: 50%;
+        font-size: 30%;
       }
   
       &:last-child {
         top: 62.5%;
+        left: 50%;
+        font-size: 30%;
       }
   
       &:only-child {
         top: 50%;
+        left: 50%;
+        font-size: 50%;
       }
     }
   }
