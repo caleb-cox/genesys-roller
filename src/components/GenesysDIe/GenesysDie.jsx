@@ -17,7 +17,7 @@ const GenesysDie = ({ type }) => {
   return (
     <div className={classNames("GenesysDie", type)} onClick={roll}>
       {results.map((result, index) => (
-        <div className="icon" key={index}>{result}</div>
+        <div className="symbol" key={index}>{result}</div>
       ))}
     </div>
   );

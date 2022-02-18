@@ -8,7 +8,7 @@
 
 .GenesysDie {
   position: relative;
-  font-size: 200px;
+  font-size: 100px;
   height: 1em;
   width: 1em;
   background: no-repeat center/contain;
@@ -39,10 +39,12 @@
     background-image: url("/src/images/setback.svg");
   }
 
-  .icon {
+  .symbol {
     position: absolute;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Genesys';
+    -webkit-font-smoothing: antialiased;
     color: #000;
 
     &:first-child {
@@ -61,18 +63,16 @@
   &.difficulty,
   &.challenge,
   &.setback {
-    .icon {
+    .symbol {
       color: #fff;
     }
   }
 
   &.ability,
   &.difficulty {
-    .icon {
-      left: 50%;
-  
+    .symbol {  
       &:first-child {
-        top: 30%;
+        top: 32.5%;
       }
   
       &:last-child {
@@ -87,15 +87,13 @@
 
   &.proficiency,
   &.challenge {
-    .icon {
-      left: 50%;
-  
+    .symbol {  
       &:first-child {
         top: 35%;
       }
   
       &:last-child {
-        top: 65%;
+        top: 62.5%;
       }
   
       &:only-child {
@@ -106,22 +104,22 @@
 
   &.boost,
   &.setback {
-    .icon {
+    .symbol {
       &:first-child {
-        left: 37.5%;
         top: 37.5%;
+        left: 37.5%;
         font-size: 40%;
       }
   
       &:last-child {
-        left: 62.5%;
         top: 62.5%;
+        left: 62.5%;
         font-size: 40%;
       }
   
       &:only-child {
-        left: 50%;
         top: 50%;
+        left: 50%;
         font-size: 60%;
       }
     }

@@ -1,1 +1,1 @@
-export { default } from "./GenesysDie"
+export { default } from "./GenesysDie";
