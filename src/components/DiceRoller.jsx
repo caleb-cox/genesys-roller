@@ -24,6 +24,10 @@ const DiceRoller = () => {
       });
   };
 
+  const clearDice = () => {
+    setDicePool([]);
+  };
+
   const rollDice = () => {
     setDicePool((prevState) => {
       const newState = [...prevState];
@@ -45,9 +49,14 @@ const DiceRoller = () => {
           />
         ))}
       </div>
-      <button className="roll-button" onClick={rollDice}>
-        Roll
-      </button>
+      <div className="buttons">
+        <button className="clear-button" onClick={clearDice}>
+          Clear
+        </button>
+        <button className="roll-button" onClick={rollDice}>
+          Roll
+        </button>
+      </div>
     </div>
   );
 };

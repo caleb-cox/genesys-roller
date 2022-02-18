@@ -6,13 +6,19 @@
 
   .dice-box {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     padding:20px;
+    width: 500px;
+    min-height: 150px;
     background-color: #ddd;
   }
 
-  .roll-button {
-    padding: 10px 20px;
-    margin: 10px;
+  .roll-button,
+  .clear-button {
+    padding: 15px 30px;
+    margin: 20px 10px 0;
     background-color: #ddd;
     cursor: pointer;
   }
