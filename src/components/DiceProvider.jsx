@@ -7,7 +7,7 @@ import {
   DIFFICULTY,
   CHALLENGE,
   SETBACK
-} from "./constants";
+} from "/src/constants";
 
 const DiceContext = createContext();
 

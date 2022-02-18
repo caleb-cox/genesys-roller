@@ -11,7 +11,7 @@ import {
   FAILURE,
   THREAT,
   DESPAIR
-} from "./constants";
+} from "/src/constants";
 
 const GenesysDie = () => {
   const { dicePool } = useDice();

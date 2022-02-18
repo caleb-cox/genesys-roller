@@ -3,7 +3,7 @@ import "./GenesysDie.scss";
 import { useEffect } from "react";
 import classNames from "classnames";
 
-import { DICE_MAP } from "./constants";
+import { DICE_MAP } from "/src/constants";
 
 const GenesysDie = ({ type, value, onClick, setResult }) => {
   const symbolMap = DICE_MAP[type];
