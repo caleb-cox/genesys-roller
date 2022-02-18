@@ -1,6 +1,6 @@
 import React from "react";
 
-import GenesysDie from "/src/components/GenesysDie";
+import GenesysDie from "./GenesysDie";
 import {
   ABILITY,
   PROFICIENCY,
@@ -8,7 +8,7 @@ import {
   DIFFICULTY,
   CHALLENGE,
   SETBACK
-} from "/src/constants/dice";
+} from "./constants";
 
 const App = () => {
   return (

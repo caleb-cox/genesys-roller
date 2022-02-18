@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 
 import "./GenesysDie.scss";
-import { diceMap } from "/src/constants/dice";
+import { diceMap } from "./constants";
 
 const GenesysDie = ({ type }) => {
   const [results, setResults] = useState([]);

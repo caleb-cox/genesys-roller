@@ -1,11 +1,9 @@
-import {
-  SUCCESS,
-  ADVANTAGE,
-  TRIUMPH,
-  FAILURE,
-  THREAT,
-  DESPAIR,
-} from "./symbols"
+export const SUCCESS = "s";
+export const ADVANTAGE = "a";
+export const TRIUMPH = "t";
+export const FAILURE = "f";
+export const THREAT = "h";
+export const DESPAIR = "d";
 
 export const ABILITY = "ability";
 export const PROFICIENCY = "proficiency";
