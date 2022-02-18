@@ -1,9 +1,9 @@
 import "./DiceRoller.scss";
 import GenesysDie from "./GenesysDie";
-import { useDiceContext } from "./App";
+import { useDice } from "./DiceProvider";
 
 const DiceRoller = () => {
-  const { dicePool, setDicePool } = useDiceContext();
+  const { dicePool, setDicePool } = useDice();
 
   const removeDieByIndex = (index) => {
     return () => setDicePool((prevState) => {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import pluralize from "pluralize";
 
 import "./DiceResults.scss";
-import { useDiceContext } from "./App";
+import { useDice } from "./DiceProvider";
 import {
   SUCCESS,
   ADVANTAGE,
@@ -13,7 +13,7 @@ import {
 } from "./constants";
 
 const GenesysDie = () => {
-  const { dicePool } = useDiceContext();
+  const { dicePool } = useDice();
   const [poolResult, setPoolResult] = useState(null);
 
   useEffect(() => {
