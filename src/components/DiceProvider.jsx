@@ -6,7 +6,7 @@ import {
   BOOST,
   DIFFICULTY,
   CHALLENGE,
-  SETBACK
+  SETBACK,
 } from "/src/constants";
 
 const DiceContext = createContext();
@@ -18,32 +18,32 @@ const DiceProvider = ({ children }) => {
     {
       type: ABILITY,
       value: Math.random(),
-      result: null
+      result: null,
     },
     {
       type: PROFICIENCY,
       value: Math.random(),
-      result: null
+      result: null,
     },
     {
       type: BOOST,
       value: Math.random(),
-      result: null
+      result: null,
     },
     {
       type: DIFFICULTY,
       value: Math.random(),
-      result: null
+      result: null,
     },
     {
       type: CHALLENGE,
       value: Math.random(),
-      result: null
+      result: null,
     },
     {
       type: SETBACK,
       value: Math.random(),
-      result: null
+      result: null,
     },
   ]);
 

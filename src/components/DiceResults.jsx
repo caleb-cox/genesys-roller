@@ -10,7 +10,7 @@ import {
   TRIUMPH,
   FAILURE,
   THREAT,
-  DESPAIR
+  DESPAIR,
 } from "/src/constants";
 
 const GenesysDie = () => {
@@ -21,27 +21,19 @@ const GenesysDie = () => {
     const symbols = dicePool
       .map(({ result }) => result)
       .flat()
-      .reduce(
-        (acc, cur) => ({...acc, [cur]: acc[cur] + 1}),
-        {
-          [SUCCESS]: 0,
-          [ADVANTAGE]: 0,
-          [TRIUMPH]: 0,
-          [FAILURE]: 0,
-          [THREAT]: 0,
-          [DESPAIR]: 0
-        }
-      );
+      .reduce((acc, cur) => ({ ...acc, [cur]: acc[cur] + 1 }), {
+        [SUCCESS]: 0,
+        [ADVANTAGE]: 0,
+        [TRIUMPH]: 0,
+        [FAILURE]: 0,
+        [THREAT]: 0,
+        [DESPAIR]: 0,
+      });
 
     const successSum =
-      symbols[SUCCESS] +
-      symbols[TRIUMPH] -
-      symbols[FAILURE] +
-      symbols[DESPAIR];
+      symbols[SUCCESS] + symbols[TRIUMPH] - symbols[FAILURE] + symbols[DESPAIR];
 
-    const advantageSum =
-      symbols[ADVANTAGE] -
-      symbols[THREAT]
+    const advantageSum = symbols[ADVANTAGE] - symbols[THREAT];
 
     const results = [];
 
@@ -66,13 +58,9 @@ const GenesysDie = () => {
     }
 
     setPoolResult(results);
-  }, [dicePool])
+  }, [dicePool]);
 
-  return (
-    <div className="DiceResults">
-      {poolResult?.join(", ")}
-    </div>
-  );
+  return <div className="DiceResults">{poolResult?.join(", ")}</div>;
 };
 
 export default GenesysDie;

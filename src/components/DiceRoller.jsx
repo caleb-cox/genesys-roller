@@ -7,19 +7,21 @@ const DiceRoller = () => {
   const { dicePool, setDicePool } = useDice();
 
   const removeDieByIndex = (index) => {
-    return () => setDicePool((prevState) => {
-      const newState = [...prevState];
-      newState.splice(index, 1);
-      return newState;
-    });
+    return () =>
+      setDicePool((prevState) => {
+        const newState = [...prevState];
+        newState.splice(index, 1);
+        return newState;
+      });
   };
 
   const setResultByIndex = (index) => {
-    return (result) => setDicePool((prevState) => {
-      const newState = [...prevState];
-      newState[index].result = result;
-      return newState;
-    });
+    return (result) =>
+      setDicePool((prevState) => {
+        const newState = [...prevState];
+        newState[index].result = result;
+        return newState;
+      });
   };
 
   return (

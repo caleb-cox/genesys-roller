@@ -16,10 +16,7 @@ const GenesysDie = ({ type, value, onClick, setResult }) => {
   }, []);
 
   return (
-    <div
-      className={classNames("GenesysDie", type)}
-      onClick={onClick}
-    >
+    <div className={classNames("GenesysDie", type)} onClick={onClick}>
       {result.map((symbol, index) => (
         <div className="symbol" key={index}>
           {symbol}

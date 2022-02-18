@@ -21,7 +21,7 @@ export const DICE_MAP = {
     5: [ADVANTAGE],
     6: [ADVANTAGE],
     7: [ADVANTAGE, SUCCESS],
-    8: [ADVANTAGE, ADVANTAGE]
+    8: [ADVANTAGE, ADVANTAGE],
   },
   [PROFICIENCY]: {
     1: [],
@@ -35,7 +35,7 @@ export const DICE_MAP = {
     9: [ADVANTAGE, SUCCESS],
     10: [ADVANTAGE, ADVANTAGE],
     11: [ADVANTAGE, ADVANTAGE],
-    12: [TRIUMPH]
+    12: [TRIUMPH],
   },
   [BOOST]: {
     1: [],
@@ -43,7 +43,7 @@ export const DICE_MAP = {
     3: [SUCCESS],
     4: [SUCCESS, ADVANTAGE],
     5: [ADVANTAGE, ADVANTAGE],
-    6: [ADVANTAGE]
+    6: [ADVANTAGE],
   },
   [DIFFICULTY]: {
     1: [],
@@ -53,7 +53,7 @@ export const DICE_MAP = {
     5: [THREAT],
     6: [THREAT],
     7: [THREAT, THREAT],
-    8: [THREAT, FAILURE]
+    8: [THREAT, FAILURE],
   },
   [CHALLENGE]: {
     1: [],
@@ -67,7 +67,7 @@ export const DICE_MAP = {
     9: [THREAT, FAILURE],
     10: [THREAT, THREAT],
     11: [THREAT, THREAT],
-    12: [DESPAIR]
+    12: [DESPAIR],
   },
   [SETBACK]: {
     1: [],
@@ -75,6 +75,6 @@ export const DICE_MAP = {
     3: [FAILURE],
     4: [FAILURE],
     5: [THREAT],
-    6: [THREAT]
+    6: [THREAT],
   },
-}
+};
