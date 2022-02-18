@@ -1,7 +1,8 @@
+import "./GenesysDie.scss";
+
 import { useEffect } from "react";
 import classNames from "classnames";
 
-import "./GenesysDie.scss";
 import { DICE_MAP } from "./constants";
 
 const GenesysDie = ({ type, value, onClick, setResult }) => {
