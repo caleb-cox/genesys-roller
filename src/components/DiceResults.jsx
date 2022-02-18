@@ -1,9 +1,9 @@
-import "./DiceResults.scss";
+import "/src/styles/DiceResults.scss";
 
 import { useState, useEffect } from "react";
 import pluralize from "pluralize";
 
-import { useDice } from "./DiceProvider";
+import { useDice } from "/src/components/DiceProvider";
 import {
   SUCCESS,
   ADVANTAGE,

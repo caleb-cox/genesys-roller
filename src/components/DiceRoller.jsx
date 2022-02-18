@@ -1,7 +1,7 @@
-import "./DiceRoller.scss";
+import "/src/styles/DiceRoller.scss";
 
-import GenesysDie from "./GenesysDie";
-import { useDice } from "./DiceProvider";
+import GenesysDie from "/src/components/GenesysDie";
+import { useDice } from "/src/components/DiceProvider";
 
 const DiceRoller = () => {
   const { dicePool, setDicePool } = useDice();

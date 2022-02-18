@@ -1,6 +1,6 @@
-import DiceProvider from "./DiceProvider";
-import DiceRoller from "./DiceRoller";
-import DiceResults from "./DiceResults";
+import DiceProvider from "/src/components/DiceProvider";
+import DiceRoller from "/src/components/DiceRoller";
+import DiceResults from "/src/components/DiceResults";
 
 const App = () => {
   return (

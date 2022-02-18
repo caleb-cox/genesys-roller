@@ -1,4 +1,4 @@
-import "./GenesysDie.scss";
+import "/src/styles/GenesysDie.scss";
 
 import { useEffect } from "react";
 import classNames from "classnames";
