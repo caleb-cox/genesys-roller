@@ -13,16 +13,16 @@ const GenesysDie = ({ type, value, onClick, setResult }) => {
 
   useEffect(() => {
     setResult(result);
-  }, []);
+  }, [value]);
 
   return (
-    <div className={classNames("GenesysDie", type)} onClick={onClick}>
+    <button className={classNames("GenesysDie", type)} onClick={onClick}>
       {result.map((symbol, index) => (
         <div className="symbol" key={index}>
           {symbol}
         </div>
       ))}
-    </div>
+    </button>
   );
 };
 

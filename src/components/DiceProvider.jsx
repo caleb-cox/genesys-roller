@@ -17,32 +17,32 @@ const DiceProvider = ({ children }) => {
   const [dicePool, setDicePool] = useState([
     {
       type: ABILITY,
-      value: Math.random(),
+      value: 0,
       result: null,
     },
     {
       type: PROFICIENCY,
-      value: Math.random(),
+      value: 0,
       result: null,
     },
     {
       type: BOOST,
-      value: Math.random(),
+      value: 0,
       result: null,
     },
     {
       type: DIFFICULTY,
-      value: Math.random(),
+      value: 0,
       result: null,
     },
     {
       type: CHALLENGE,
-      value: Math.random(),
+      value: 0,
       result: null,
     },
     {
       type: SETBACK,
-      value: Math.random(),
+      value: 0,
       result: null,
     },
   ]);

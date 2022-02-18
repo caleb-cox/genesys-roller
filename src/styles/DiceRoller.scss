@@ -1,4 +1,19 @@
 .DiceRoller {
-  display: flex;
   margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .dice-box {
+    display: flex;
+    padding:20px;
+    background-color: #ddd;
+  }
+
+  .roll-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ddd;
+    cursor: pointer;
+  }
 }

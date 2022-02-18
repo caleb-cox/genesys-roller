@@ -24,17 +24,30 @@ const DiceRoller = () => {
       });
   };
 
+  const rollDice = () => {
+    setDicePool((prevState) => {
+      const newState = [...prevState];
+      newState.forEach((die) => (die.value = Math.random()));
+      return newState;
+    });
+  };
+
   return (
     <div className="DiceRoller">
-      {dicePool.map(({ type, value }, index) => (
-        <GenesysDie
-          key={index}
-          type={type}
-          value={value}
-          onClick={removeDieByIndex(index)}
-          setResult={setResultByIndex(index)}
-        />
-      ))}
+      <div className="dice-box">
+        {dicePool.map(({ type, value }, index) => (
+          <GenesysDie
+            key={index}
+            type={type}
+            value={value}
+            onClick={removeDieByIndex(index)}
+            setResult={setResultByIndex(index)}
+          />
+        ))}
+      </div>
+      <button className="roll-button" onClick={rollDice}>
+        Roll
+      </button>
     </div>
   );
 };
