@@ -12,7 +12,7 @@ export const DIFFICULTY = "difficulty";
 export const CHALLENGE = "challenge";
 export const SETBACK = "setback";
 
-export const diceMap = {
+export const DICE_MAP = {
   [ABILITY]: {
     1: [],
     2: [SUCCESS],
