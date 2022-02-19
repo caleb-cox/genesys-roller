@@ -2,6 +2,14 @@ import "/src/styles/DiceRoller.scss";
 
 import GenesysDie from "/src/components/GenesysDie";
 import { useDice } from "/src/components/DiceProvider";
+import {
+  ABILITY,
+  PROFICIENCY,
+  BOOST,
+  DIFFICULTY,
+  CHALLENGE,
+  SETBACK,
+} from "/src/constants";
 
 const DiceRoller = () => {
   const { dicePool, setDicePool } = useDice();
@@ -20,6 +28,19 @@ const DiceRoller = () => {
       setDicePool((prevState) => {
         const newState = [...prevState];
         newState[index].result = result;
+        return newState;
+      });
+  };
+
+  const addDie = (type) => {
+    return () =>
+      setDicePool((prevState) => {
+        const newState = [...prevState];
+        newState.push({
+          value: 0,
+          result: [],
+          type,
+        });
         return newState;
       });
   };
@@ -49,11 +70,19 @@ const DiceRoller = () => {
           />
         ))}
       </div>
-      <div className="buttons">
-        <button className="clear-button" onClick={clearDice}>
+      <div className="add-dice-buttons">
+        <button className="add ability" onClick={addDie(ABILITY)} />
+        <button className="add proficiency" onClick={addDie(PROFICIENCY)} />
+        <button className="add boost" onClick={addDie(BOOST)} />
+        <button className="add difficulty" onClick={addDie(DIFFICULTY)} />
+        <button className="add challenge" onClick={addDie(CHALLENGE)} />
+        <button className="add setback" onClick={addDie(SETBACK)} />
+      </div>
+      <div className="roll-dice-buttons">
+        <button className="clear" onClick={clearDice}>
           Clear
         </button>
-        <button className="roll-button" onClick={rollDice}>
+        <button className="roll" onClick={rollDice}>
           Roll
         </button>
       </div>

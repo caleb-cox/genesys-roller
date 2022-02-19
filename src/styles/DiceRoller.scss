@@ -9,17 +9,68 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding:20px;
+    padding: 20px;
     width: 500px;
     min-height: 150px;
     background-color: #ddd;
   }
 
-  .roll-button,
-  .clear-button {
-    padding: 15px 30px;
-    margin: 20px 10px 0;
-    background-color: #ddd;
-    cursor: pointer;
+  .add-dice-buttons,
+  .roll-dice-buttons {
+    button {
+      margin: 20px 10px 0;
+      cursor: pointer;
+      display: inline-block;
+
+      &.add {
+        height: 40px;
+        width: 40px;
+        background: no-repeat center/contain;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+
+        &::before {
+          content: "+";
+        }
+
+        &.ability {
+          background-image: url("/src/images/ability.svg");
+          color: #000;
+        }
+      
+        &.proficiency {
+          background-image: url("/src/images/proficiency.svg");
+          color: #000;
+        }
+      
+        &.boost {
+          background-image: url("/src/images/boost.svg");
+          color: #000;
+        }
+      
+        &.difficulty {
+          background-image: url("/src/images/difficulty.svg");
+          color: #fff;
+        }
+      
+        &.challenge {
+          background-image: url("/src/images/challenge.svg");
+          color: #fff;
+        }
+      
+        &.setback {
+          background-image: url("/src/images/setback.svg");
+          color: #fff;
+        }
+      }
+
+      &.roll,
+      &.clear {
+        padding: 15px 30px;
+        background-color: #ddd;
+      }
+    }
   }
 }
