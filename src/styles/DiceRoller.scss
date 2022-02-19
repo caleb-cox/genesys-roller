@@ -1,3 +1,5 @@
+@import "/src/styles/mixins.scss";
+
 .DiceRoller {
   margin: 25px;
   display: flex;
@@ -5,20 +7,21 @@
   align-items: center;
 
   .dice-box {
+    @include cutout;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    align-content: center;
     justify-content: center;
-    padding: 20px;
     width: 500px;
-    min-height: 150px;
-    background-color: #ddd;
+    min-height: 200px;
+    padding: 10px;
   }
 
   .add-dice-buttons,
   .roll-dice-buttons {
     button {
-      margin: 20px 10px 0;
+      margin: 25px 10px 0;
       cursor: pointer;
       display: inline-block;
 
@@ -29,47 +32,49 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 25px;
+        font-size: 20px;
 
         &::before {
           content: "+";
+          font-weight: bold;
         }
 
         &.ability {
           background-image: url("/src/images/ability.svg");
-          color: #000;
+          color: $black;
         }
       
         &.proficiency {
           background-image: url("/src/images/proficiency.svg");
-          color: #000;
+          color: $black;
         }
       
         &.boost {
           background-image: url("/src/images/boost.svg");
-          color: #000;
+          color: $black;
         }
       
         &.difficulty {
           background-image: url("/src/images/difficulty.svg");
-          color: #fff;
+          color: $white;
         }
       
         &.challenge {
           background-image: url("/src/images/challenge.svg");
-          color: #fff;
+          color: $white;
         }
       
         &.setback {
           background-image: url("/src/images/setback.svg");
-          color: #fff;
+          color: $white;
         }
       }
 
       &.roll,
       &.clear {
-        padding: 15px 30px;
-        background-color: #ddd;
+        @include button;
+        font-size: 20px;
+        padding: 10px 20px;
       }
     }
   }

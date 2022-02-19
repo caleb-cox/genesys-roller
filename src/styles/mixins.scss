@@ -1,0 +1,21 @@
+$base-color: #555;
+$light-color: lighten($base-color, 10%);
+$dark-color: darken($base-color, 20%);
+$black: #111;
+$white: #eee;
+
+@mixin cutout {
+  border-style: solid;
+  border-width: 2px;
+  border-color: $dark-color $light-color $light-color $dark-color;
+}
+
+@mixin button {
+  border-style: solid;
+  border-width: 2px;
+  border-color: $light-color $dark-color $dark-color $light-color;
+
+  &:active {
+    border-color: $dark-color $light-color $light-color $dark-color;
+  }
+}

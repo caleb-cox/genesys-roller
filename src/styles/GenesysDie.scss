@@ -1,16 +1,11 @@
-@font-face {
-  font-family: "Genesys";
-  src: url("/src/fonts/genesysglyphsanddice.woff2") format("woff2"),
-    url("/src/fonts/genesysglyphsanddice.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import "/src/styles/mixins.scss";
 
 .GenesysDie {
   position: relative;
   font-size: 75px;
   height: 1em;
   width: 1em;
+  margin: 1px;
   background: no-repeat center/contain;
   user-select: none;
   cursor: pointer;
@@ -51,7 +46,7 @@
   &.proficiency,
   &.boost {
     .symbol {
-      color: #000;
+      color: $black;
     }
   }
 
@@ -59,7 +54,7 @@
   &.challenge,
   &.setback {
     .symbol {
-      color: #fff;
+      color: $white;
     }
   }
 
