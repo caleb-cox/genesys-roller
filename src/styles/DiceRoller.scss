@@ -8,14 +8,20 @@
 
   .dice-box {
     @include cutout;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 500px;
-    min-height: 200px;
+    width: 300px;
+    height: 200px;
     padding: 10px;
+    display: flex;
+    overflow: auto;
+
+    .dice-container {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
   }
 
   .add-dice-buttons,
@@ -43,27 +49,27 @@
           background-image: url("/src/images/ability.svg");
           color: $black;
         }
-      
+
         &.proficiency {
           background-image: url("/src/images/proficiency.svg");
           color: $black;
         }
-      
+
         &.boost {
           background-image: url("/src/images/boost.svg");
           color: $black;
         }
-      
+
         &.difficulty {
           background-image: url("/src/images/difficulty.svg");
           color: $white;
         }
-      
+
         &.challenge {
           background-image: url("/src/images/challenge.svg");
           color: $white;
         }
-      
+
         &.setback {
           background-image: url("/src/images/setback.svg");
           color: $white;

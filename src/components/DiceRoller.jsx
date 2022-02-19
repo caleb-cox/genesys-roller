@@ -60,15 +60,17 @@ const DiceRoller = () => {
   return (
     <div className="DiceRoller">
       <div className="dice-box">
-        {dicePool.map(({ type, value }, index) => (
-          <GenesysDie
-            key={index}
-            type={type}
-            value={value}
-            onClick={removeDieByIndex(index)}
-            setResult={setResultByIndex(index)}
-          />
-        ))}
+        <div className="dice-container">
+          {dicePool.map(({ type, value }, index) => (
+            <GenesysDie
+              key={index}
+              type={type}
+              value={value}
+              onClick={removeDieByIndex(index)}
+              setResult={setResultByIndex(index)}
+            />
+          ))}
+        </div>
       </div>
       <div className="add-dice-buttons">
         <button className="add ability" onClick={addDie(ABILITY)} />
