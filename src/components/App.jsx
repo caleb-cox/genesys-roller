@@ -5,8 +5,8 @@ import DiceResults from "/src/components/DiceResults";
 const App = () => {
   return (
     <DiceProvider>
-      <DiceRoller />
       <DiceResults />
+      <DiceRoller />
     </DiceProvider>
   );
 };
