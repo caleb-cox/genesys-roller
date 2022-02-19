@@ -1,6 +1,5 @@
-import "/src/styles/DiceRoller.scss";
+import "/src/styles/DiceControls.scss";
 
-import GenesysDie from "/src/components/GenesysDie";
 import { useDice } from "/src/components/DiceProvider";
 import {
   ABILITY,
@@ -11,26 +10,8 @@ import {
   SETBACK,
 } from "/src/constants";
 
-const DiceRoller = () => {
-  const { dicePool, setDicePool } = useDice();
-
-  const removeDieByIndex = (index) => {
-    return () =>
-      setDicePool((prevState) => {
-        const newState = [...prevState];
-        newState.splice(index, 1);
-        return newState;
-      });
-  };
-
-  const setResultByIndex = (index) => {
-    return (result) =>
-      setDicePool((prevState) => {
-        const newState = [...prevState];
-        newState[index].result = result;
-        return newState;
-      });
-  };
+const DiceControls = () => {
+  const { setDicePool } = useDice();
 
   const addDie = (type) => {
     return () =>
@@ -58,20 +39,7 @@ const DiceRoller = () => {
   };
 
   return (
-    <div className="DiceRoller">
-      <div className="dice-box">
-        <div className="dice-container">
-          {dicePool.map(({ type, value }, index) => (
-            <GenesysDie
-              key={index}
-              type={type}
-              value={value}
-              onClick={removeDieByIndex(index)}
-              setResult={setResultByIndex(index)}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="DiceControls">
       <div className="add-dice-buttons">
         <button className="add ability" onClick={addDie(ABILITY)} />
         <button className="add proficiency" onClick={addDie(PROFICIENCY)} />
@@ -92,4 +60,4 @@ const DiceRoller = () => {
   );
 };
 
-export default DiceRoller;
+export default DiceControls;

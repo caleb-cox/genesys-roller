@@ -1,15 +1,19 @@
 import "/src/styles/App.scss";
 
 import DiceProvider from "/src/components/DiceProvider";
-import DiceRoller from "/src/components/DiceRoller";
 import DiceResults from "/src/components/DiceResults";
+import DiceBox from "/src/components/DiceBox";
+import DiceControls from "/src/components/DiceControls";
 
 const App = () => {
   return (
-    <DiceProvider>
-      <DiceResults />
-      <DiceRoller />
-    </DiceProvider>
+    <div className="App">
+      <DiceProvider>
+        <DiceResults />
+        <DiceBox />
+        <DiceControls  />
+      </DiceProvider>
+    </div>
   );
 };
 
