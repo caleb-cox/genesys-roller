@@ -4,6 +4,13 @@ $dark-color: darken($base-color, 20%);
 $black: #111;
 $white: #eee;
 
+$ability-color: #60AA55;
+$proficiency-color: #FEF151;
+$boost-color: #87CBDA;
+$difficulty-color: #4B2879;
+$challenge-color: #6D1C19;
+$setback-color: #212121;
+
 @mixin cutout {
   border-style: solid;
   border-width: 2px;
