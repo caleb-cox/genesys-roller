@@ -17,7 +17,7 @@ const GenesysDie = ({ type, value, index }) => {
 
   useEffect(() => {
     setResultByIndex(result, index);
-  }, [type, value]);
+  }, [value]);
 
   return (
     <button

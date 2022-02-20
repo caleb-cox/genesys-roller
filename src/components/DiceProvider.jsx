@@ -13,6 +13,7 @@ const DiceProvider = ({ children }) => {
     setDicePool((prevState) => {
       const newState = [...prevState];
       newState.push({
+        uuid: Date.now().toString(16),
         value: 0,
         result: [],
         type,

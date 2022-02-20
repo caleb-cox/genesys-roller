@@ -13,7 +13,7 @@ import {
 import { useDice } from "/src/components/DiceProvider";
 import Symbol from "/src/components/Symbol";
 
-const GenesysDie = () => {
+const DiceResults = () => {
   const { dicePool } = useDice();
   const [poolResult, setPoolResult] = useState(null);
 
@@ -64,7 +64,7 @@ const GenesysDie = () => {
   return (
     <div className="DiceResults">
       {poolResult?.map(({ symbolType, quantity }, index) => (
-        <div key={index} className="result">
+        <div key={symbolType} className="result">
           <Symbol type={symbolType} />
           {quantity > 1 && <div className="quantity">{quantity}</div>}
         </div>
@@ -73,4 +73,4 @@ const GenesysDie = () => {
   );
 };
 
-export default GenesysDie;
+export default DiceResults;

@@ -9,8 +9,8 @@ const DiceControls = () => {
 
   return (
     <div className="DiceControls">
-      {BUTTON_LIST.map((type, index) => (
-        <button key={index} className={`add ${type}`} onClick={() => addDie(type)}>
+      {BUTTON_LIST.map((type) => (
+        <button key={type} className={`add ${type}`} onClick={() => addDie(type)}>
           <Symbol type={type} />
         </button>
       ))}

@@ -9,8 +9,8 @@ const DiceBox = () => {
   return (
     <div className="DiceBox">
       <div className="dice-container">
-        {dicePool.map(({ type, value }, index) => (
-          <GenesysDie key={index} type={type} value={value} index={index} />
+        {dicePool.map(({ uuid, type, value }, index) => (
+          <GenesysDie key={uuid} type={type} value={value} index={index} />
         ))}
       </div>
     </div>
