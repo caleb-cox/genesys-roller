@@ -117,3 +117,16 @@ export const DICE_MAP = {
     1: [THREAT],
   },
 };
+
+export const DICE_ORDER = [
+  ABILITY,
+  PROFICIENCY,
+  DIFFICULTY,
+  CHALLENGE,
+  BOOST,
+  SETBACK,
+  SUCCESS,
+  ADVANTAGE,
+  FAILURE,
+  THREAT,
+];

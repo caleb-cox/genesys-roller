@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
+import { DICE_ORDER } from "/src/constants";
+
 const DiceContext = createContext();
 
 export const useDice = () => useContext(DiceContext);
@@ -15,6 +17,9 @@ const DiceProvider = ({ children }) => {
         result: [],
         type,
       });
+      newState.sort(
+        (a, b) => DICE_ORDER.indexOf(a.type) - DICE_ORDER.indexOf(b.type)
+      );
       return newState;
     });
   };
