@@ -17,10 +17,14 @@ $setback-color: #212121;
   border-color: $dark-color $light-color $light-color $dark-color;
 }
 
-@mixin button {
+@mixin panel {
   border-style: solid;
   border-width: 2px;
   border-color: $light-color $dark-color $dark-color $light-color;
+}
+
+@mixin button {
+  @include panel;
 
   &:active {
     border-color: $dark-color $light-color $light-color $dark-color;

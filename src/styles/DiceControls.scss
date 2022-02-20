@@ -1,22 +1,13 @@
 @import "/src/styles/mixins.scss";
 
 .DiceControls {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  .add-dice-buttons,
-  .roll-dice-buttons {
-    display: flex;
-  }
-
-  .roll-dice-buttons {
-    margin-top: 25px;
-  }
+  display: grid;
+    grid: repeat(3, 1fr) / repeat(6, 1fr);
+    gap: 10px;
+    width: 100%;
 
   button {
     @include button;
-    margin: 0 10px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -25,12 +16,12 @@
 
     &.roll,
     &.clear {
-      width: 100px;
       font-size: 20px;
+      grid-column: span 3;
     }
 
     &.add {
-      width: 50px;
+      grid-column: span 2;
       font-size: 40px;
       font-family: "Genesys";
       -webkit-text-stroke: 0.075em black;

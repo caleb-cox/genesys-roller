@@ -15,22 +15,18 @@ const DiceControls = () => {
 
   return (
     <div className="DiceControls">
-      <div className="add-dice-buttons">
-        <button className="add ability" onClick={() => addDie(ABILITY)} />
-        <button className="add proficiency" onClick={() => addDie(PROFICIENCY)} />
-        <button className="add boost" onClick={() => addDie(BOOST)} />
-        <button className="add difficulty" onClick={() => addDie(DIFFICULTY)} />
-        <button className="add challenge" onClick={() => addDie(CHALLENGE)} />
-        <button className="add setback" onClick={() => addDie(SETBACK)} />
-      </div>
-      <div className="roll-dice-buttons">
-        <button className="clear" onClick={clearDice}>
-          Clear
-        </button>
-        <button className="roll" onClick={rollDice}>
-          Roll
-        </button>
-      </div>
+      <button className="add ability" onClick={() => addDie(ABILITY)} />
+      <button className="add proficiency" onClick={() => addDie(PROFICIENCY)} />
+      <button className="add boost" onClick={() => addDie(BOOST)} />
+      <button className="add difficulty" onClick={() => addDie(DIFFICULTY)} />
+      <button className="add challenge" onClick={() => addDie(CHALLENGE)} />
+      <button className="add setback" onClick={() => addDie(SETBACK)} />
+      <button className="clear" onClick={clearDice}>
+        Clear
+      </button>
+      <button className="roll" onClick={rollDice}>
+        Roll
+      </button>
     </div>
   );
 };
