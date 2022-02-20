@@ -1,16 +1,43 @@
-export const SUCCESS = "s";
-export const ADVANTAGE = "a";
-export const TRIUMPH = "t";
-export const FAILURE = "f";
-export const THREAT = "h";
-export const DESPAIR = "d";
-
 export const ABILITY = "ability";
 export const PROFICIENCY = "proficiency";
 export const BOOST = "boost";
 export const DIFFICULTY = "difficulty";
 export const CHALLENGE = "challenge";
 export const SETBACK = "setback";
+export const SUCCESS = "success";
+export const ADVANTAGE = "advantage";
+export const TRIUMPH = "triumph";
+export const FAILURE = "failure";
+export const THREAT = "threat";
+export const DESPAIR = "despair";
+
+export const BUTTON_LIST = [
+  ABILITY,
+  PROFICIENCY,
+  BOOST,
+  SUCCESS,
+  ADVANTAGE,
+  DIFFICULTY,
+  CHALLENGE,
+  SETBACK,
+  FAILURE,
+  THREAT,
+];
+
+export const SYMBOL_MAP = {
+  [ABILITY]: "k",
+  [PROFICIENCY]: "l",
+  [BOOST]: "j",
+  [DIFFICULTY]: "k",
+  [CHALLENGE]: "l",
+  [SETBACK]: "j",
+  [SUCCESS]: "s",
+  [ADVANTAGE]: "a",
+  [TRIUMPH]: "t",
+  [FAILURE]: "f",
+  [THREAT]: "h",
+  [DESPAIR]: "d",
+};
 
 export const DICE_MAP = {
   [ABILITY]: {

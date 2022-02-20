@@ -14,20 +14,19 @@
     opacity: 50%;
   }
 
-  .symbol {
-    @include genesys-font;
+  .Symbol {
     position: absolute;
     transform: translate(-50%, -50%);
   }
 
-  &.s,
-  &.a,
-  &.f,
-  &.h {
+  &.success,
+  &.advantage,
+  &.failure,
+  &.threat {
     @include panel;
     border-radius: 50%;
     background-color: $white;
-    .symbol {
+    .Symbol {
       top: 50%;
       left: 50%;
       font-size: 60%;
@@ -38,7 +37,7 @@
   &.ability,
   &.proficiency,
   &.boost {
-    .symbol {
+    .Symbol {
       color: $black;
     }
   }
@@ -46,14 +45,14 @@
   &.difficulty,
   &.challenge,
   &.setback {
-    .symbol {
+    .Symbol {
       color: $white;
     }
   }
 
   &.ability,
   &.difficulty {
-    .symbol {
+    .Symbol {
       &:first-child {
         top: 32.5%;
         left: 50%;
@@ -76,7 +75,7 @@
 
   &.proficiency,
   &.challenge {
-    .symbol {
+    .Symbol {
       &:first-child {
         top: 35%;
         left: 50%;
@@ -99,7 +98,7 @@
 
   &.boost,
   &.setback {
-    .symbol {
+    .Symbol {
       &:first-child {
         top: 37.5%;
         left: 37.5%;

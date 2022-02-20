@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import classNames from "classnames";
 
 import { useDice } from "/src/components/DiceProvider";
+import Symbol from "/src/components/Symbol";
 import { DICE_MAP } from "/src/constants";
 
 const GenesysDie = ({ type, value, index }) => {
@@ -23,10 +24,8 @@ const GenesysDie = ({ type, value, index }) => {
       className={classNames("GenesysDie", type)}
       onClick={() => removeDieByIndex(index)}
     >
-      {result.map((symbol, index) => (
-        <div className="symbol" key={index}>
-          {symbol}
-        </div>
+      {result.map((symbolType, index) => (
+        <Symbol key={index} type={symbolType} />
       ))}
     </button>
   );

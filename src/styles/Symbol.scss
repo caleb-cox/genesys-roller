@@ -1,0 +1,40 @@
+@import "/src/styles/mixins.scss";
+
+.Symbol {
+  font-family: "Genesys";
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+
+  &.ability,
+  &.proficiency,
+  &.boost,
+  &.difficulty,
+  &.challenge,
+  &.setback {
+    -webkit-text-stroke: 0.075em black;
+  }
+
+  &.ability {
+    color: $ability-color;
+  }
+
+  &.proficiency {
+    color: $proficiency-color;
+  }
+
+  &.boost {
+    color: $boost-color;
+  }
+
+  &.difficulty {
+    color: $difficulty-color;
+  }
+
+  &.challenge {
+    color: $challenge-color;
+  }
+
+  &.setback {
+    color: $setback-color;
+  }
+}

@@ -21,90 +21,16 @@
     }
 
     &.add {
-      @include genesys-font;
       grid-column: span 2;
 
-      &.ability,
-      &.proficiency,
-      &.boost,
-      &.difficulty,
-      &.challenge,
-      &.setback {
-        font-size: 40px;
-        -webkit-text-stroke: 0.075em black;
-      }
+      .Symbol {
+        font-size: 35px;
 
-      &.ability {
-        &::before {
-          content: "k";
-        }
-        color: $ability-color;
-      }
-
-      &.proficiency {
-        &::before {
-          content: "l";
-        }
-        color: $proficiency-color;
-      }
-
-      &.boost {
-        &::before {
-          content: "j";
-        }
-        color: $boost-color;
-      }
-
-      &.difficulty {
-        &::before {
-          content: "k";
-        }
-        color: $difficulty-color;
-      }
-
-      &.challenge {
-        &::before {
-          content: "l";
-        }
-        color: $challenge-color;
-      }
-
-      &.setback {
-        &::before {
-          content: "j";
-        }
-        color: $setback-color;
-      }
-
-      &.success,
-      &.advantage,
-      &.failure,
-      &.threat {
-        font-size: 30px;
-        color: $white;
-      }
-
-      &.success {
-        &::before {
-          content: "s";
-        }
-      }
-
-      &.advantage {
-        &::before {
-          content: "a";
-        }
-      }
-
-      &.failure {
-        &::before {
-          content: "f";
-        }
-      }
-
-      &.threat {
-        &::before {
-          content: "h";
+        &.success,
+        &.advantage,
+        &.failure,
+        &.threat {
+          color: $white;
         }
       }
     }

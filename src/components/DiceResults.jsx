@@ -2,7 +2,6 @@ import "/src/styles/DiceResults.scss";
 
 import { useState, useEffect } from "react";
 
-import { useDice } from "/src/components/DiceProvider";
 import {
   SUCCESS,
   ADVANTAGE,
@@ -11,6 +10,8 @@ import {
   THREAT,
   DESPAIR,
 } from "/src/constants";
+import { useDice } from "/src/components/DiceProvider";
+import Symbol from "/src/components/Symbol";
 
 const GenesysDie = () => {
   const { dicePool } = useDice();
@@ -63,7 +64,7 @@ const GenesysDie = () => {
     <div className="DiceResults">
       {poolResult?.map((result, index) => (
         <div className="result" key={index}>
-          <span className="symbol">{result.symbol}</span>
+          <Symbol type={result.symbol} />
           {result.quantity > 1 && (
             <div className="quantity">{result.quantity}</div>
           )}
