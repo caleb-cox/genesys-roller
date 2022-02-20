@@ -1,10 +1,10 @@
 @import "/src/styles/mixins.scss";
 
 .DiceControls {
+  width: 100%;
   display: grid;
-    grid: repeat(3, 1fr) / repeat(6, 1fr);
-    gap: 10px;
-    width: 100%;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
 
   button {
     @include button;
@@ -14,17 +14,25 @@
     justify-content: center;
     cursor: pointer;
 
-    &.roll,
-    &.clear {
+    &.clear,
+    &.roll {
       font-size: 20px;
-      grid-column: span 3;
+      grid-column: span 5;
     }
 
     &.add {
-      grid-column: span 2;
-      font-size: 40px;
       font-family: "Genesys";
-      -webkit-text-stroke: 0.075em black;
+      grid-column: span 2;
+
+      &.ability,
+      &.proficiency,
+      &.boost,
+      &.difficulty,
+      &.challenge,
+      &.setback {
+        font-size: 40px;
+        -webkit-text-stroke: 0.075em black;
+      }
 
       &.ability {
         &::before {
@@ -66,6 +74,39 @@
           content: "j";
         }
         color: $setback-color;
+      }
+
+      &.success,
+      &.advantage,
+      &.failure,
+      &.threat {
+        font-size: 30px;
+        color: $white;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      &.success {
+        &::before {
+          content: "s";
+        }
+      }
+
+      &.advantage {
+        &::before {
+          content: "a";
+        }
+      }
+
+      &.failure {
+        &::before {
+          content: "f";
+        }
+      }
+
+      &.threat {
+        &::before {
+          content: "h";
+        }
       }
     }
   }

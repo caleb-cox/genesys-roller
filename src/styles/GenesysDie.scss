@@ -5,33 +5,13 @@
   font-size: 50px;
   height: 1em;
   width: 1em;
-  margin: 2.5px 5px;
+  margin: 2.5px;
   background: no-repeat center/contain;
   user-select: none;
   cursor: pointer;
 
-  &.ability {
-    background-image: url("/src/images/ability.svg");
-  }
-
-  &.proficiency {
-    background-image: url("/src/images/proficiency.svg");
-  }
-
-  &.boost {
-    background-image: url("/src/images/boost.svg");
-  }
-
-  &.difficulty {
-    background-image: url("/src/images/difficulty.svg");
-  }
-
-  &.challenge {
-    background-image: url("/src/images/challenge.svg");
-  }
-
-  &.setback {
-    background-image: url("/src/images/setback.svg");
+  &:hover {
+    opacity: 50%;
   }
 
   .symbol {
@@ -40,6 +20,21 @@
     font-family: "Genesys";
     -webkit-font-smoothing: antialiased;
     line-height: 1;
+  }
+
+  &.s,
+  &.a,
+  &.f,
+  &.h {
+    @include panel;
+    border-radius: 50%;
+    background-color: $white;
+    .symbol {
+      top: 50%;
+      left: 50%;
+      font-size: 60%;
+      color: $black;
+    }
   }
 
   &.ability,
@@ -125,5 +120,29 @@
         font-size: 60%;
       }
     }
+  }
+
+  &.ability {
+    background-image: url("/src/images/ability.svg");
+  }
+
+  &.proficiency {
+    background-image: url("/src/images/proficiency.svg");
+  }
+
+  &.boost {
+    background-image: url("/src/images/boost.svg");
+  }
+
+  &.difficulty {
+    background-image: url("/src/images/difficulty.svg");
+  }
+
+  &.challenge {
+    background-image: url("/src/images/challenge.svg");
+  }
+
+  &.setback {
+    background-image: url("/src/images/setback.svg");
   }
 }

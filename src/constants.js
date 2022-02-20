@@ -77,4 +77,16 @@ export const DICE_MAP = {
     5: [THREAT],
     6: [THREAT],
   },
+  [SUCCESS]: {
+    1: [SUCCESS],
+  },
+  [ADVANTAGE]: {
+    1: [ADVANTAGE],
+  },
+  [FAILURE]: {
+    1: [FAILURE],
+  },
+  [THREAT]: {
+    1: [THREAT],
+  },
 };

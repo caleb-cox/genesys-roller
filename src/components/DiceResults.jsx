@@ -31,7 +31,7 @@ const GenesysDie = () => {
       });
 
     const successSum =
-      symbols[SUCCESS] + symbols[TRIUMPH] - symbols[FAILURE] + symbols[DESPAIR];
+      symbols[SUCCESS] + symbols[TRIUMPH] - symbols[FAILURE] - symbols[DESPAIR];
 
     const advantageSum = symbols[ADVANTAGE] - symbols[THREAT];
 
