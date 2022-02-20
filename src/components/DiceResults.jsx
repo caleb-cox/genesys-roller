@@ -32,29 +32,30 @@ const GenesysDie = () => {
 
     const successSum =
       symbols[SUCCESS] + symbols[TRIUMPH] - symbols[FAILURE] - symbols[DESPAIR];
-
     const advantageSum = symbols[ADVANTAGE] - symbols[THREAT];
-
+    const triumphSum = symbols[TRIUMPH];
+    const despairSum = symbols[DESPAIR];
     const results = [];
 
+
     if (successSum > 0) {
-      results.push({ quantity: successSum, symbol: SUCCESS });
+      results.push({ quantity: successSum, symbolType: SUCCESS });
     } else if (successSum < 0) {
-      results.push({ quantity: -successSum, symbol: FAILURE });
+      results.push({ quantity: -successSum, symbolType: FAILURE });
     }
 
     if (advantageSum > 0) {
-      results.push({ quantity: advantageSum, symbol: ADVANTAGE });
+      results.push({ quantity: advantageSum, symbolType: ADVANTAGE });
     } else if (advantageSum < 0) {
-      results.push({ quantity: -advantageSum, symbol: THREAT });
+      results.push({ quantity: -advantageSum, symbolType: THREAT });
     }
 
-    if (symbols[TRIUMPH] > 0) {
-      results.push({ quantity: symbols[TRIUMPH], symbol: TRIUMPH });
+    if (triumphSum > 0) {
+      results.push({ quantity: triumphSum, symbolType: TRIUMPH });
     }
 
-    if (symbols[DESPAIR] > 0) {
-      results.push({ quantity: symbols[DESPAIR], symbol: DESPAIR });
+    if (despairSum > 0) {
+      results.push({ quantity: despairSum, symbolType: DESPAIR });
     }
 
     setPoolResult(results);
@@ -62,12 +63,10 @@ const GenesysDie = () => {
 
   return (
     <div className="DiceResults">
-      {poolResult?.map((result, index) => (
-        <div className="result" key={index}>
-          <Symbol type={result.symbol} />
-          {result.quantity > 1 && (
-            <div className="quantity">{result.quantity}</div>
-          )}
+      {poolResult?.map(({ symbolType, quantity }, index) => (
+        <div key={index} className="result">
+          <Symbol type={symbolType} />
+          {quantity > 1 && <div className="quantity">{quantity}</div>}
         </div>
       ))}
     </div>
