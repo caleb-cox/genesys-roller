@@ -1,7 +1,6 @@
 import "/src/styles/DiceResults.scss";
 
 import { useState, useEffect } from "react";
-import pluralize from "pluralize";
 
 import { useDice } from "/src/components/DiceProvider";
 import {
@@ -37,30 +36,41 @@ const GenesysDie = () => {
 
     const results = [];
 
-    if (successSum >= 0) {
-      results.push(pluralize("Success", successSum, true));
-    } else {
-      results.push(pluralize("Failure", -successSum, true));
+    if (successSum > 0) {
+      results.push({ quantity: successSum, symbol: SUCCESS });
+    } else if (successSum < 0) {
+      results.push({ quantity: -successSum, symbol: FAILURE });
     }
 
     if (advantageSum > 0) {
-      results.push(pluralize("Advantage", advantageSum, true));
+      results.push({ quantity: advantageSum, symbol: ADVANTAGE });
     } else if (advantageSum < 0) {
-      results.push(pluralize("Threat", -advantageSum, true));
+      results.push({ quantity: -advantageSum, symbol: THREAT });
     }
 
     if (symbols[TRIUMPH] > 0) {
-      results.push(pluralize("Triumph", symbols[TRIUMPH], true));
+      results.push({ quantity: symbols[TRIUMPH], symbol: TRIUMPH });
     }
 
     if (symbols[DESPAIR] > 0) {
-      results.push(pluralize("Despair", symbols[DESPAIR], true));
+      results.push({ quantity: symbols[DESPAIR], symbol: DESPAIR });
     }
 
     setPoolResult(results);
   }, [dicePool]);
 
-  return <div className="DiceResults">{poolResult?.join(", ")}</div>;
+  return (
+    <div className="DiceResults">
+      {poolResult?.map((result) => (
+        <div className="result">
+          <span className="symbol">{result.symbol}</span>
+          {result.quantity > 1 && (
+            <div className="quantity">{result.quantity}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default GenesysDie;
