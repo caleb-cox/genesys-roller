@@ -21,7 +21,7 @@
     }
 
     &.add {
-      font-family: "Genesys";
+      @include genesys-font;
       grid-column: span 2;
 
       &.ability,

@@ -1,13 +1,5 @@
 @import "/src/styles/mixins.scss";
 
-@font-face {
-  font-family: "Genesys";
-  src: url("/src/fonts/genesysglyphsanddice.woff2") format("woff2"),
-    url("/src/fonts/genesysglyphsanddice.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   background-color: $base-color;
 }

@@ -14,9 +14,7 @@
     margin: 0 5px;
 
     .symbol {
-      font-family: "Genesys";
-      -webkit-font-smoothing: antialiased;
-      line-height: 1;
+      @include genesys-font;
       font-size: 60px;
     }
   

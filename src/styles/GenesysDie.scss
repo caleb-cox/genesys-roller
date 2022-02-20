@@ -15,11 +15,9 @@
   }
 
   .symbol {
+    @include genesys-font;
     position: absolute;
     transform: translate(-50%, -50%);
-    font-family: "Genesys";
-    -webkit-font-smoothing: antialiased;
-    line-height: 1;
   }
 
   &.s,
