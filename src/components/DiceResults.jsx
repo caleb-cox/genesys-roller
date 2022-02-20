@@ -61,8 +61,8 @@ const GenesysDie = () => {
 
   return (
     <div className="DiceResults">
-      {poolResult?.map((result) => (
-        <div className="result">
+      {poolResult?.map((result, index) => (
+        <div className="result" key={index}>
           <span className="symbol">{result.symbol}</span>
           {result.quantity > 1 && (
             <div className="quantity">{result.quantity}</div>
