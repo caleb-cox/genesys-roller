@@ -2,11 +2,11 @@
 
 .GenesysDie {
   position: relative;
-  font-size: 50px;
   height: 1em;
   width: 1em;
   margin: 2.5px;
   background: no-repeat center/contain;
+  font-size: 50px;
   user-select: none;
   cursor: pointer;
 
@@ -26,27 +26,23 @@
     @include panel;
     border-radius: 50%;
     background-color: $white;
+    
     .Symbol {
       top: 50%;
       left: 50%;
       font-size: 60%;
-      color: $black;
     }
   }
 
+  &.success,
+  &.advantage,
+  &.failure,
+  &.threat,
   &.ability,
   &.proficiency,
   &.boost {
     .Symbol {
       color: $black;
-    }
-  }
-
-  &.difficulty,
-  &.challenge,
-  &.setback {
-    .Symbol {
-      color: $white;
     }
   }
 

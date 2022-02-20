@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "Genesys";
-  src: url("/src/fonts/genesysglyphsanddice.woff2") format("woff2"),
-    url("/src/fonts/genesysglyphsanddice.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 $base-color: #555;
 $light-color: lighten($base-color, 10%);
 $dark-color: darken($base-color, 20%);
@@ -19,26 +11,38 @@ $difficulty-color: #4B2879;
 $challenge-color: #6D1C19;
 $setback-color: #212121;
 
+@font-face {
+  font-family: "Genesys";
+  src: url("/src/fonts/genesysglyphsanddice.woff2") format("woff2"),
+    url("/src/fonts/genesysglyphsanddice.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @mixin genesys-font {
   font-family: "Genesys";
-  -webkit-font-smoothing: antialiased;
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 @mixin cutout {
-  border-style: solid;
-  border-width: 2px;
+  border: 2px solid;
   border-color: $dark-color $light-color $light-color $dark-color;
 }
 
 @mixin panel {
-  border-style: solid;
-  border-width: 2px;
+  border: 2px solid;
   border-color: $light-color $dark-color $dark-color $light-color;
 }
 
 @mixin button {
   @include panel;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  cursor: pointer;
 
   &:active {
     border-color: $dark-color $light-color $light-color $dark-color;

@@ -12,11 +12,8 @@ body {
   transform: translate(-50%, -50%);
   width: 350px;
   padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: sans-serif;
-  color: #eee;
+  color: $white;
 
   & > * + * {
     margin-top: 25px;

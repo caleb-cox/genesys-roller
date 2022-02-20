@@ -8,31 +8,19 @@
 
   button {
     @include button;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    font-size: 20px;
+
+    .Symbol {
+      font-size: 35px;
+    }
 
     &.clear,
     &.roll {
-      font-size: 20px;
       grid-column: span 5;
     }
 
     &.add {
       grid-column: span 2;
-
-      .Symbol {
-        font-size: 35px;
-
-        &.success,
-        &.advantage,
-        &.failure,
-        &.threat {
-          color: $white;
-        }
-      }
     }
   }
 }

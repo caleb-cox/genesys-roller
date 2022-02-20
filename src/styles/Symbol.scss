@@ -1,9 +1,7 @@
 @import "/src/styles/mixins.scss";
 
 .Symbol {
-  font-family: "Genesys";
-  -webkit-font-smoothing: antialiased;
-  line-height: 1;
+  @include genesys-font;
 
   &.ability,
   &.proficiency,
@@ -11,7 +9,7 @@
   &.difficulty,
   &.challenge,
   &.setback {
-    -webkit-text-stroke: 0.075em black;
+    -webkit-text-stroke: 0.075em $black;
   }
 
   &.ability {
