@@ -10,8 +10,10 @@
   user-select: none;
   cursor: pointer;
 
-  &:hover {
-    opacity: 50%;
+  @media (hover: hover) {
+    &:hover {
+      opacity: 50%;
+    }
   }
 
   .Symbol {
@@ -26,7 +28,7 @@
     @include panel;
     border-radius: 50%;
     background-color: $white;
-    
+
     .Symbol {
       top: 50%;
       left: 50%;
